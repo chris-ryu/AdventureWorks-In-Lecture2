@@ -18,6 +18,7 @@ namespace AdventureWorks.Models
         }
 
        
+        public virtual DbSet<VIPItemDTO> VIPs { get; set; } = null!;
         public virtual DbSet<Address> Addresses { get; set; } = null!;
         public virtual DbSet<BuildVersion> BuildVersions { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;

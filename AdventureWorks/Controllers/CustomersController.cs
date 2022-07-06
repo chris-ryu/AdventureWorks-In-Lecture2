@@ -30,6 +30,14 @@ namespace AdventureWorks.Controllers
             return Ok(customers);
         }
 
+        [HttpGet("vips-sp")]
+        public async Task<IActionResult> GetVipsSP([FromQuery] int averageTotalDue, [FromQuery]int limit)
+        {
+            var vips = await _context.VIPs.FromSqlRaw("EXECUTE GetVIPs {0}, {1}", averageTotalDue, limit)
+                .ToListAsync();
+            return Ok(vips);
+        }
+
         [HttpGet("vips")]
         public async Task<IActionResult> GetVips([FromQuery] int averageTotalDue)
         {

@@ -2,6 +2,7 @@
 
 namespace AdventureWorks.Controllers
 {
+    [Keyless]
     public class VIPItemDTO
     {
         public int CustomerId { get; set; }
